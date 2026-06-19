@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Voluka – Knowledge and educational mobile applications. Finland-based software publisher." />
+  <title>Voluka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #0f1117;
+      --ink-2:    #3d4252;
+      --ink-3:    #8b909f;
+      --bg:       #f7f8fa;
+      --white:    #ffffff;
+      --accent:   #2563eb;
+      --accent-h: #1d4ed8;
+      --border:   #e2e4ea;
+      --card-bg:  #ffffff;
+      --radius:   12px;
+      --max-w:    860px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 248, 250, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-2);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 88px 24px;
+    }
+
+    .inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ── HOME ── */
+    #home {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .home-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    .home-top-text { 
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .home-logo {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .home-top { flex-direction: column-reverse; gap: 16px; }
+      .home-logo { width: 120px; height: 120px; }
+    }
+
+    .home-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0;
+    }
+
+    .home-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(16px, 4vw, 40px);
+      letter-spacing: -2px;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 0;
+    }
+
+    .home-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink-2);
+      margin-bottom: 0;
+      max-width: 520px;
+    }
+
+    .home-desc {
+      font-size: 16px;
+      color: var(--ink-2);
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    .home-bid {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--ink-3);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn:hover { background: var(--accent-h); transform: translateY(-1px); }
+
+    /* ── SECTION HEADER ── */
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: -1px;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--bg);
+    }
+
+    .about-text {
+      font-size: 17px;
+      color: var(--ink-2);
+      max-width: 620px;
+      line-height: 1.8;
+    }
+
+    .about-text p + p { margin-top: 16px; }
+
+    /* ── APPS ── */
+    #apps {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .app-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+
+    .app-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 14px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .app-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .app-desc {
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .app-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: var(--accent);
+    }
+
+    .app-badge.soon { background: #f0fdf4; color: #16a34a; }
+
+    .apps-coming {
+      margin-top: 32px;
+      padding: 24px;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+      color: var(--ink-3);
+    }
+
+    .apps-coming strong {
+      display: block;
+      font-size: 15px;
+      color: var(--ink-2);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .coming-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .coming-tag {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 20px 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .coming-tag img {
+      width: 68px;
+      height: 68px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--bg);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .contact-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 8px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      word-break: break-word;
+    }
+
+    .contact-value a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ── PRIVACY ── */
+    #privacy {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+
+    .privacy-body {
+      max-width: 680px;
+    }
+
+    .privacy-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--ink);
+      margin-top: 36px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-body p {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .privacy-body ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .privacy-body li {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.75;
+      margin-bottom: 6px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--ink-3);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer span { color: #5a6175; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 13px; }
+      section { padding: 64px 20px; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 400px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── MOTION ── */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <img src="voluka_logo.png" alt="Voluka logo" />
+        Voluka
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="inner">
+      <div class="home-layout">
+        <div class="home-text">
+          <div class="home-top">
+            <img src="voluka_logo.png" alt="Voluka" class="home-logo" />
+            <div class="home-top-text">
+              <span class="home-eyebrow">Helsinki, Finland</span>
+              <h1 class="home-title">Voluka</h1>
+              <p class="home-subtitle">Knowledge and educational mobile applications</p>
+            </div>
+          </div>
+          <p class="home-desc">
+            Voluka is a Finland-based software publisher focused on educational and knowledge-based mobile applications.
+            Our mission is to create useful, accessible and engaging software that helps people learn, explore knowledge and improve everyday life.
+          </p>
+          <span class="home-bid">Business ID: 3633876-7</span>
+          <br />
+          <a href="#contact" class="btn">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="inner fade-in">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Who we are</h2>
+      <div class="about-text">
+        <p>Voluka is a sole proprietorship registered in Finland.</p>
+        <p>The company develops mobile applications and digital products with a focus on education, knowledge, productivity and personal development.</p>
+        <p>Founded in 2026, Voluka aims to deliver reliable and user-friendly applications for a global audience.</p>
+        <p>Where do we find our inspiration? Why these specific products? The answer is simple. We created what we personally needed. Our own experience, our needs, and our vision deliver real results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="inner fade-in">
+      <p class="section-label">Apps</p>
+      <h2 class="section-title">Our applications</h2>
+      <p style="color: var(--ink-2); max-width: 560px;">
+        We build a line of applications that help people integrate into a new country —
+        test their knowledge of history, laws and traditions, and approach citizenship exams with confidence.
+      </p>
+
+      <div class="apps-grid">
+        <div class="app-card">
+          <div class="app-icon">
+            <img src="iknowfinland_icon.png" alt="IknowFinland app icon" />
+          </div>
+          <div class="app-name">IknowFinland</div>
+          <p class="app-desc">
+            A citizenship test simulator for Finland. Practice questions on Finnish history, governance, equality and labor law — in Finnish and Swedish.
+          </p>
+          <span class="app-badge soon">Coming July 2026</span>
+        </div>
+      </div>
+
+      <div class="apps-coming">
+        <strong>Up next</strong>
+        Following the launch of IknowFinland, we are preparing applications for other countries with similar functionality.
+        <div class="coming-list">
+          <span class="coming-tag">
+            <img src="iknowgermany_icon.png" alt="Germany" />
+            IknowGermany
+          </span>
+          <span class="coming-tag">
+            <img src="iknowfrance_icon.png" alt="France" />
+            IknowFrance
+          </span>
+          <span class="coming-tag">
+            <img src="iknowsweden_icon.png" alt="Sweden" />
+            IknowSweden
+          </span>
+          <span class="coming-tag">
+            <img src="iknownetherlands_icon.png" alt="Netherlands" />
+            IknowNetherlands
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="inner fade-in">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <p class="contact-label">Company</p>
+          <p class="contact-value">Voluka</p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">Business ID</p>
+          <p class="contact-value">3633876-7</p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">Location</p>
+          <p class="contact-value">Helsinki, Finland</p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">Email</p>
+          <p class="contact-value"><a href="mailto:info@voluka.net">info@voluka.net</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY -->
+  <section id="privacy">
+    <div class="inner fade-in">
+      <p class="section-label">Legal</p>
+      <h2 class="section-title">Privacy Policy – IknowFinland</h2>
+      <div class="privacy-body">
+        <p><em>Last updated: June 17, 2026</em></p>
+        <p>IknowFinland ("the App") is developed by Voluka, a private individual. This Privacy Policy explains how information is collected and used when you use the App.</p>
+
+        <h3>Information We Collect</h3>
+        <p>The App itself does not collect, store, or transmit any personal data. Your quiz settings and preferences are stored locally on your device only.</p>
+        <p>The App displays advertisements provided by <strong>Google AdMob</strong>. AdMob may collect and process certain data to serve ads, including:</p>
+        <ul>
+          <li>Device identifiers (e.g. advertising ID)</li>
+          <li>IP address</li>
+          <li>Device type and operating system</li>
+          <li>App usage data</li>
+        </ul>
+        <p>This data is collected and processed by Google in accordance with <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+        <h3>Third-Party Services</h3>
+        <p>The App uses Google AdMob for advertising. Google may use the collected data to serve personalised or non-personalised ads depending on your consent choices.</p>
+
+        <h3>Your Rights (GDPR)</h3>
+        <p>If you are located in the European Economic Area, you have the right to access, correct, or delete your personal data, and to withdraw consent at any time. Since the App does not directly collect personal data, requests regarding advertising data should be directed to Google.</p>
+        <p>You can opt out of personalised advertising on your device:</p>
+        <ul>
+          <li><strong>Android:</strong> Settings → Google → Ads → Delete advertising ID</li>
+          <li><strong>iOS:</strong> Settings → Privacy &amp; Security → Tracking → disable "Allow Apps to Request to Track"</li>
+        </ul>
+
+        <h3>Children's Privacy</h3>
+        <p>The App is intended for users aged 18 and older. We do not knowingly collect data from children under 18.</p>
+
+        <h3>Contact</h3>
+        <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@voluka.net">info@voluka.net</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Voluka · Business ID 3633876-7 · Helsinki, Finland</span>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
