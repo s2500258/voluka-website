@@ -133,8 +133,8 @@
     }
 
     @media (max-width: 640px) {
-      .home-top { flex-direction: column-reverse; gap: 16px; }
-      .home-logo { width: 120px; height: 120px; }
+      .home-top { flex-direction: column-reverse; gap: 4px; }
+      .home-logo { width: 70%; aspect-ratio: 1; height: auto; }
     }
 
     .home-eyebrow {
@@ -441,8 +441,15 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
-      .nav-links { gap: 20px; }
+      .nav-logo { font-size: 18px; }
+      .nav-logo img { width: 32px; height: 32px; }
+      .nav-links { gap: 12px; }
       .nav-links a { font-size: 13px; }
+      .home-logo { width: 70%; aspect-ratio: 1; height: auto; }
+      .home-title {
+        font-size: clamp(24px, 6vw, 40px);
+        letter-spacing: 0px;
+      }
       section { padding: 64px 20px; }
       .apps-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr 1fr; }
