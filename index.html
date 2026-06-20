@@ -3,36 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Voluka – Knowledge and educational mobile applications. Finland-based software publisher." />
-  <title>Voluka</title>
+  <meta name="description" content="IknowFinland – Finnish citizenship test simulator. 120+ questions in 8 languages, 2 quiz modes. Coming July 2026." />
+  <title>IknowFinland · Voluka</title>
   <link rel="icon" href="voluka_logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink:      #0f1117;
-      --ink-2:    #3d4252;
-      --ink-3:    #8b909f;
-      --bg:       #f7f8fa;
-      --white:    #ffffff;
-      --accent:   #2563eb;
-      --accent-h: #1d4ed8;
-      --border:   #e2e4ea;
-      --card-bg:  #ffffff;
-      --radius:   12px;
-      --max-w:    860px;
+      --ink:       #0f172a;
+      --ink-2:     #334155;
+      --ink-3:     #64748b;
+      --white:     #ffffff;
+      --accent:    #2563eb;
+      --accent-h:  #1d4ed8;
+      --accent-lt: #dbeafe;
+      --border:    #e2e8f0;
+      --radius:    14px;
+      --max-w:     960px;
+      --div:       rgba(147, 197, 253, 0.75);
     }
 
-    html { 
-      scroll-behavior: smooth; 
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: transparent;
       color: var(--ink);
       font-size: 16px;
       line-height: 1.65;
@@ -44,9 +41,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(247, 248, 250, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.84);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
 
@@ -61,33 +58,25 @@
     }
 
     .nav-logo {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 800;
-      font-size: 22px;
+      font-size: 19px;
       letter-spacing: -0.5px;
       color: var(--ink);
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
-    .nav-logo img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
+    .nav-logo img { width: 30px; height: 30px; object-fit: contain; }
 
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
 
     .nav-links a {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
-      color: var(--ink-2);
+      color: var(--ink-3);
       text-decoration: none;
       transition: color 0.15s;
     }
@@ -96,125 +85,373 @@
 
     /* ── SECTIONS ── */
     section {
-      padding: 88px 24px;
-      border-bottom: 1px solid rgba(147, 197, 253, 0.75);
+      padding: 96px 24px;
+      border-bottom: 1px solid var(--div);
     }
 
-    .inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
+    .inner { max-width: var(--max-w); margin: 0 auto; }
 
-    /* ── HOME ── */
-    #home {
-      background: linear-gradient(180deg, #e4effe 0%, #ffffff 100%);
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }
-
-    .home-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 24px;
-    }
-
-    .home-top-text { 
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .home-logo {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 640px) {
-      .home-top { flex-direction: column-reverse; gap: 4px; }
-      .home-logo { width: 70%; aspect-ratio: 1; height: auto; }
-    }
-
-    .home-eyebrow {
-      display: inline-block;
-      font-size: 12px;
+    .section-label {
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0;
+      margin-bottom: 14px;
     }
 
-    .home-title {
-      font-family: 'Syne', sans-serif;
+    .section-title {
+      font-family: 'Outfit', sans-serif;
       font-weight: 800;
-      font-size: clamp(16px, 4vw, 40px);
-      letter-spacing: -2px;
-      line-height: 1.1;
+      font-size: clamp(30px, 4vw, 48px);
+      letter-spacing: -1.5px;
+      line-height: 1.08;
       color: var(--ink);
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
 
-    .home-subtitle {
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--ink-2);
-      margin-bottom: 0;
-      max-width: 520px;
+    /* ── HERO ── */
+    #hero {
+      background: linear-gradient(145deg, #b8d0ff 0%, #e8f1ff 60%, #ffffff 100%);
+      padding: 88px 24px 108px;
     }
 
-    .home-desc {
-      font-size: 16px;
-      color: var(--ink-2);
-      max-width: 560px;
-      margin-bottom: 40px;
-      line-height: 1.75;
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      gap: 56px;
+      align-items: center;
     }
 
-    .home-bid {
-      display: inline-block;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,255,255,0.95);
+      border-radius: var(--radius);
+      padding: 13px 30px 13px 15px;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.3px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge img {
+      width: 55px;
+      height: 55px;
+      border-radius: 11px;
+      object-fit: cover;
+    }
+
+    .hero-badge-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-badge-name {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .hero-badge-sub {
       font-size: 12px;
-      color: var(--ink-3);
       font-weight: 500;
-      letter-spacing: 0.5px;
+      color: var(--ink-3);
+      line-height: 1.2;
+    }
+
+    .hero-badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.22);
+      margin-left: 4px;
+    }
+
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(38px, 5.5vw, 66px);
+      letter-spacing: -3px;
+      line-height: 1.04;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--ink-2);
+      max-width: 440px;
+      line-height: 1.72;
+      margin-bottom: 32px;
+    }
+
+    .hero-langs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
       margin-bottom: 40px;
     }
+
+    .lang-chip {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.96);
+      border-radius: 100px;
+      padding: 5px 13px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+
+    .hero-ctas { display: flex; gap: 10px; align-items: center; }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       background: var(--accent);
       color: #fff;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      padding: 13px 28px;
-      border-radius: 8px;
+      padding: 12px 24px;
+      border-radius: 10px;
       text-decoration: none;
       transition: background 0.15s, transform 0.1s;
     }
 
     .btn:hover { background: var(--accent-h); transform: translateY(-1px); }
 
-    /* ── SECTION HEADER ── */
-    .section-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-3);
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: color 0.15s;
     }
 
-    .section-title {
-      font-family: 'Syne', sans-serif;
+    .btn-ghost:hover { color: var(--accent); }
+
+    /* Phone */
+    .phone-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone-svg {
+      width: 100%;
+      max-width: 270px;
+      filter: drop-shadow(0 28px 52px rgba(37,99,235,0.17)) drop-shadow(0 6px 14px rgba(0,0,0,0.1));
+    }
+
+    /* ── FEATURES ── */
+    #features {
+      background: linear-gradient(180deg, #ffffff 0%, #e4effe 100%);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 32px rgba(37,99,235,0.08);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .icon-blue   { background: #eff6ff; }
+    .icon-green  { background: #f0fdf4; }
+    .icon-purple { background: #f5f3ff; }
+    .icon-amber  { background: #fffbeb; }
+
+    .feature-title {
+      font-family: 'Outfit', sans-serif;
       font-weight: 700;
-      font-size: clamp(28px, 4vw, 40px);
-      letter-spacing: -1px;
+      font-size: 18px;
       color: var(--ink);
-      margin-bottom: 24px;
+      margin-bottom: 9px;
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--ink-3);
+      line-height: 1.65;
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how {
+      background: linear-gradient(180deg, #e4effe 0%, #ffffff 100%);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 56px;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 31px;
+      left: calc(16.67% + 12px);
+      right: calc(16.67% + 12px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent-lt), var(--border), var(--accent-lt));
+    }
+
+    .step { text-align: center; padding: 0 20px; }
+
+    .step-num {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--accent-lt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 22px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 13.5px;
+      color: var(--ink-3);
+      line-height: 1.65;
+    }
+
+    /* ── LANGUAGES ── */
+    #languages {
+      background: linear-gradient(180deg, #ffffff 0%, #e4effe 100%);
+    }
+
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .lang-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      transition: box-shadow 0.2s;
+    }
+
+    .lang-card:hover { box-shadow: 0 4px 16px rgba(37,99,235,0.07); }
+
+    .lang-flag { font-size: 30px; line-height: 1; flex-shrink: 0; }
+    .lang-name { font-weight: 600; font-size: 14px; color: var(--ink); }
+    .lang-native { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
+
+    /* ── UPCOMING ── */
+    #upcoming {
+      background: linear-gradient(180deg, #e4effe 0%, #ffffff 100%);
+    }
+
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .app-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .app-card:hover {
+      box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .app-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 17px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+    .app-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .app-desc {
+      font-size: 13px;
+      color: var(--ink-3);
+      line-height: 1.55;
     }
 
     /* ── ABOUT ── */
@@ -222,142 +459,55 @@
       background: linear-gradient(180deg, #ffffff 0%, #e4effe 100%);
     }
 
-    .about-text {
-      font-size: 17px;
-      color: var(--ink-2);
-      max-width: 620px;
-      line-height: 1.8;
-    }
-
-    .about-text p + p { margin-top: 16px; }
-
-    /* ── APPS ── */
-    #apps {
-      background: linear-gradient(180deg, #e4effe 0%, #ffffff 100%);
-    }
-
-    .apps-grid {
+    .about-first-row {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .app-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      transition: box-shadow 0.2s, transform 0.15s;
-    }
-
-    .app-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
-      transform: translateY(-2px);
-    }
-
-    .app-icon {
-      width: 68px;
-      height: 68px;
-      border-radius: 14px;
-      background: #f0f0f0;
-      display: flex;
+      grid-template-columns: 130px 1fr;
+      gap: 6px;
       align-items: center;
-      justify-content: center;
       margin-bottom: 16px;
-      overflow: hidden;
+      max-width: 680px;
     }
 
-    .app-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 14px;
-    }
-
-    .app-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-
-    .app-desc {
-      font-size: 14px;
+    .about-first-p {
+      font-size: 16px;
       color: var(--ink-2);
-      line-height: 1.6;
-      margin-bottom: 16px;
+      line-height: 1.82;
     }
 
-    .app-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: #e4effe;
-      color: var(--accent);
+    .about-body {
+      max-width: 680px;
     }
 
-    .app-badge.soon { background: #f0fdf4; color: #16a34a; }
+    .about-body p + p { margin-top: 20px; }
 
-    .apps-coming {
-      margin-top: 32px;
-      padding: 24px;
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      font-size: 14px;
+    .about-body p {
+      font-size: 16px;
+      color: var(--ink-2);
+      line-height: 1.82;
+    }
+
+    .about-meta {
+      font-size: 13px;
       color: var(--ink-3);
+      margin-top: 28px;
     }
 
-    .apps-coming strong {
-      display: block;
-      font-size: 15px;
-      color: var(--ink-2);
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .coming-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .coming-tag {
-      font-family: 'Syne', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      padding: 20px 32px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .coming-tag img {
-      width: 68px;
-      height: 68px;
-      border-radius: 4px;
-      object-fit: cover;
+    .about-logo {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      opacity: 0.8;
     }
 
     /* ── CONTACT ── */
     #contact {
-      background: linear-gradient(180deg, #ffffff 0%, #e4effe 100%);
+      background: linear-gradient(180deg, #e4effe 0%, #ffffff 100%);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
       margin-top: 40px;
     }
 
@@ -365,111 +515,96 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px 20px;
+      padding: 20px;
     }
 
     .contact-label {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--ink-3);
       margin-bottom: 8px;
     }
 
-    .contact-value {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--ink);
-      word-break: break-word;
-    }
-
-    .contact-value a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
+    .contact-value { font-size: 14px; font-weight: 500; color: var(--ink); }
+    .contact-value a { color: var(--accent); text-decoration: none; }
     .contact-value a:hover { text-decoration: underline; }
 
     /* ── PRIVACY ── */
     #privacy {
-      background: linear-gradient(180deg, #e4effe 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #e4effe 100%);
     }
 
-    .privacy-body {
-      max-width: 680px;
-    }
+    .privacy-body { max-width: 660px; }
 
     .privacy-body h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 16px;
       color: var(--ink);
       margin-top: 36px;
       margin-bottom: 10px;
     }
 
     .privacy-body p {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--ink-2);
       line-height: 1.75;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .privacy-body ul {
-      padding-left: 20px;
-      margin-bottom: 12px;
-    }
+    .privacy-body ul { padding-left: 20px; margin-bottom: 12px; }
 
     .privacy-body li {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--ink-2);
       line-height: 1.75;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     /* ── FOOTER ── */
     footer {
       background: var(--ink);
-      color: var(--ink-3);
-      padding: 32px 24px;
+      color: #475569;
+      padding: 36px 24px;
       text-align: center;
       font-size: 13px;
     }
 
-    footer span { color: #5a6175; }
+    footer a { color: #64748b; text-decoration: none; }
+    footer a:hover { color: #94a3b8; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .nav-logo { font-size: 18px; }
-      .nav-logo img { width: 32px; height: 32px; }
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: 13px; }
-      .home-logo { width: 70%; aspect-ratio: 1; height: auto; }
-      .home-title {
-        font-size: clamp(24px, 6vw, 40px);
-        letter-spacing: 0px;
-      }
-      section { padding: 64px 20px; }
-      .apps-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 780px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .phone-wrap { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 36px; }
+      .steps::before { display: none; }
+      .lang-grid { grid-template-columns: repeat(2, 1fr); }
+      .upcoming-grid { grid-template-columns: 1fr; }
+      .about-layout { grid-template-columns: 1fr; }
+      .about-first-row { grid-template-columns: 1fr; }
+      .about-logo { width: 200px; height: 200px; }
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { gap: 16px; }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 480px) {
+      section { padding: 64px 20px; }
       .contact-grid { grid-template-columns: 1fr; }
+      .hero-title { letter-spacing: -2px; }
     }
 
     /* ── MOTION ── */
     @media (prefers-reduced-motion: no-preference) {
       .fade-in {
         opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(22px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
       }
-      .fade-in.visible {
-        opacity: 1;
-        transform: none;
-      }
+      .fade-in.visible { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -478,39 +613,265 @@
   <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <a href="#home" class="nav-logo">
-        <img src="voluka_logo.png" alt="Voluka logo" />
+      <a href="#hero" class="nav-logo">
+        <img src="voluka_logo.png" alt="Voluka" />
         Voluka
       </a>
       <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#upcoming">Apps</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#apps">Apps</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#privacy">Privacy</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HOME -->
-  <section id="home">
-    <div class="inner">
-      <div class="home-layout">
-        <div class="home-text">
-          <div class="home-top">
-            <img src="voluka_logo.png" alt="Voluka" class="home-logo" />
-            <div class="home-top-text">
-              <span class="home-eyebrow">Helsinki, Finland</span>
-              <h1 class="home-title">Voluka</h1>
-              <p class="home-subtitle">Knowledge and educational mobile applications</p>
-            </div>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <div class="hero-badge">
+          <img src="iknowfinland_icon.png" alt="IknowFinland" />
+          <div class="hero-badge-info">
+            <span class="hero-badge-name">IknowFinland</span>
+            <span class="hero-badge-sub">Mobile app · App Store &amp; Google Play</span>
           </div>
-          <p class="home-desc">
-            Voluka is a Finland-based software publisher focused on educational and knowledge-based mobile applications.
-            Our mission is to create useful, accessible and engaging software that helps people learn, explore knowledge and improve everyday life.
-          </p>
-          <span class="home-bid">Business ID: 3633876-7</span>
-          <br />
-          <a href="#contact" class="btn">Get in touch</a>
+          <span class="hero-badge-dot"></span>
+          Coming July 2026
+        </div>
+        <h1 class="hero-title">Pass your Finnish<br /><em>citizenship test</em><br />first try.</h1>
+        <p class="hero-sub">
+          A quiz simulator for the Finnish citizenship exam —
+          120+ questions across 4 topics, in your language.
+        </p>
+        <div class="hero-langs">
+          <span class="lang-chip">🇫🇮 Finnish</span>
+          <span class="lang-chip">🇸🇪 Swedish</span>
+          <span class="lang-chip">🇬🇧 English</span>
+          <span class="lang-chip">🇷🇺 Russian</span>
+          <span class="lang-chip">🇺🇦 Ukrainian</span>
+          <span class="lang-chip">🇹🇷 Turkish</span>
+          <span class="lang-chip">🇸🇦 Arabic</span>
+          <span class="lang-chip">🇪🇪 Estonian</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn">
+            Get notified
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#features" class="btn-ghost">See features →</a>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <svg class="phone-svg" viewBox="0 0 280 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="card-shadow" x="-8%" y="-8%" width="116%" height="130%">
+              <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="rgba(0,0,0,0.07)"/>
+            </filter>
+            <linearGradient id="header-grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1d4ed8"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Phone body -->
+          <rect x="2" y="2" width="276" height="556" rx="40" fill="#1e293b"/>
+          <!-- Screen -->
+          <rect x="8" y="8" width="264" height="544" rx="35" fill="#f1f5f9"/>
+          <!-- Dynamic island -->
+          <rect x="96" y="18" width="88" height="28" rx="14" fill="#1e293b"/>
+
+          <!-- Status: time -->
+          <text x="28" y="37" fill="#64748b" font-size="11" font-family="Arial" font-weight="600">9:41</text>
+          <!-- Battery -->
+          <rect x="228" y="26" width="24" height="12" rx="3" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+          <rect x="230" y="28" width="18" height="8" rx="2" fill="#22c55e"/>
+          <rect x="252" y="29.5" width="3" height="5" rx="1.5" fill="#94a3b8"/>
+
+          <!-- App header -->
+          <rect x="8" y="54" width="264" height="54" fill="url(#header-grad)"/>
+          <!-- Back chevron -->
+          <path d="M26 78 L20 82 L26 86" stroke="rgba(255,255,255,0.7)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="38" y="85" fill="white" font-size="15" font-family="Arial" font-weight="700">IknowFinland</text>
+          <!-- Timer pill -->
+          <rect x="196" y="67" width="62" height="28" rx="8" fill="rgba(255,255,255,0.18)"/>
+          <text x="227" y="85" fill="white" font-size="13" font-family="Arial" font-weight="700" text-anchor="middle">⏱ 29:45</text>
+
+          <!-- Progress bar bg -->
+          <rect x="8" y="108" width="264" height="3" fill="#e2e8f0"/>
+          <!-- Progress (7/30 ≈ 23%) -->
+          <rect x="8" y="108" width="61" height="3" fill="#60a5fa" rx="1.5"/>
+
+          <!-- Progress label -->
+          <text x="20" y="126" fill="#94a3b8" font-size="10.5" font-family="Arial">Kysymys 7 / 30</text>
+          <text x="260" y="126" fill="#2563eb" font-size="10.5" font-family="Arial" text-anchor="end" font-weight="700">23%</text>
+
+          <!-- Question card -->
+          <rect x="14" y="136" width="252" height="88" rx="13" fill="white" filter="url(#card-shadow)"/>
+          <text x="140" y="160" fill="#94a3b8" font-size="9.5" font-family="Arial" text-anchor="middle" font-weight="700" letter-spacing="1.2">KYSYMYS</text>
+          <text x="140" y="182" fill="#0f172a" font-size="13.5" font-family="Arial" text-anchor="middle" font-weight="700">Milloin Suomi itsenäistyi?</text>
+          <text x="140" y="202" fill="#94a3b8" font-size="11" font-family="Arial" text-anchor="middle" font-style="italic">When did Finland become independent?</text>
+
+          <!-- Option 1 -->
+          <rect x="14" y="236" width="252" height="44" rx="11" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <circle cx="30" cy="258" r="9.5" fill="none" stroke="#e2e8f0" stroke-width="1.4"/>
+          <text x="48" y="262.5" fill="#334155" font-size="13" font-family="Arial">1905</text>
+
+          <!-- Option 2 — correct -->
+          <rect x="14" y="288" width="252" height="44" rx="11" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.6"/>
+          <circle cx="30" cy="310" r="9.5" fill="#22c55e" stroke="#22c55e" stroke-width="1.4"/>
+          <text x="30" y="314" fill="white" font-size="10" font-family="Arial" text-anchor="middle" font-weight="800">✓</text>
+          <text x="48" y="314.5" fill="#15803d" font-size="13" font-family="Arial" font-weight="700">1917</text>
+
+          <!-- Option 3 -->
+          <rect x="14" y="340" width="252" height="44" rx="11" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <circle cx="30" cy="362" r="9.5" fill="none" stroke="#e2e8f0" stroke-width="1.4"/>
+          <text x="48" y="366.5" fill="#334155" font-size="13" font-family="Arial">1920</text>
+
+          <!-- Option 4 -->
+          <rect x="14" y="392" width="252" height="44" rx="11" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <circle cx="30" cy="414" r="9.5" fill="none" stroke="#e2e8f0" stroke-width="1.4"/>
+          <text x="48" y="418.5" fill="#334155" font-size="13" font-family="Arial">1944</text>
+
+          <!-- Explanation card -->
+          <rect x="14" y="448" width="252" height="72" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="28" y="468" fill="#1d4ed8" font-size="9.5" font-family="Arial" font-weight="700" letter-spacing="0.8">SELITYS</text>
+          <text x="28" y="486" fill="#334155" font-size="11.5" font-family="Arial">Suomi julisti itsenäisyytensä</text>
+          <text x="28" y="504" fill="#334155" font-size="11.5" font-family="Arial">6. joulukuuta 1917.</text>
+
+          <!-- Home bar -->
+          <rect x="100" y="540" width="80" height="4" rx="2" fill="#cbd5e1"/>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="inner fade-in">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">Everything you need<br />to prepare</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue">📋</div>
+          <div class="feature-title">Real exam mode</div>
+          <p class="feature-desc">30 questions, 30-minute countdown — exactly like the actual citizenship test. The timer turns orange at 5 minutes and red at 1 minute. At the end you'll see your overall score as well as a breakdown by each topic: History, Governance, Equality and Labor Law.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-green">🎓</div>
+          <div class="feature-title">Training mode</div>
+          <p class="feature-desc">Get instant explanations after every answer. Configure question count freely. No time pressure — learn at your own pace.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-purple">🌍</div>
+          <div class="feature-title">8 hint languages</div>
+          <p class="feature-desc">Quiz questions in Finnish or Swedish. Read hints and explanations in your native language — 8 options so nothing gets lost in translation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-amber">📚</div>
+          <div class="feature-title">120+ questions</div>
+          <p class="feature-desc">Over 120 questions covering all topics of the Finnish citizenship exam, each with a detailed explanation. As new methodological materials from the Finnish Immigration Service are released, the question bank will be updated accordingly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="inner fade-in">
+      <p class="section-label">How it works</p>
+      <h2 class="section-title">Three steps to<br />exam-ready</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Choose your mode</div>
+          <p class="step-desc">Pick Training to learn with explanations, or Real to simulate the actual 30-question exam under timed conditions.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Answer questions</div>
+          <p class="step-desc">Select your question language and the language for hints. Work through topics in any order you like.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Review & retry</div>
+          <p class="step-desc">See your score after every session. Review each question with the correct answer and retry until you feel confident.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages">
+    <div class="inner fade-in">
+      <p class="section-label">Languages</p>
+      <h2 class="section-title">Prepared for<br />every immigrant</h2>
+      <p style="color: var(--ink-3); max-width: 480px; font-size: 15px;">Questions in Finnish and Swedish. Hints and full explanations available in 8 languages — covering the most common immigrant communities in Finland.</p>
+      <div class="lang-grid">
+        <div class="lang-card"><span class="lang-flag">🇫🇮</span><div><div class="lang-name">Finnish</div><div class="lang-native">Suomi</div></div></div>
+        <div class="lang-card"><span class="lang-flag">🇸🇪</span><div><div class="lang-name">Swedish</div><div class="lang-native">Svenska</div></div></div>
+        <div class="lang-card"><span class="lang-flag">🇬🇧</span><div><div class="lang-name">English</div><div class="lang-native">English</div></div></div>
+        <div class="lang-card"><span class="lang-flag">🇷🇺</span><div><div class="lang-name">Russian</div><div class="lang-native">Русский</div></div></div>
+        <div class="lang-card"><span class="lang-flag">🇺🇦</span><div><div class="lang-name">Ukrainian</div><div class="lang-native">Українська</div></div></div>
+        <div class="lang-card"><span class="lang-flag">🇹🇷</span><div><div class="lang-name">Turkish</div><div class="lang-native">Türkçe</div></div></div>
+        <div class="lang-card"><span class="lang-flag">🇸🇦</span><div><div class="lang-name">Arabic</div><div class="lang-native">العربية</div></div></div>
+        <div class="lang-card"><span class="lang-flag">🇪🇪</span><div><div class="lang-name">Estonian</div><div class="lang-native">Eesti</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING -->
+  <section id="upcoming">
+    <div class="inner fade-in">
+      <p class="section-label">Coming next</p>
+      <h2 class="section-title">Expanding across<br />Europe</h2>
+      <p style="color: var(--ink-3); max-width: 560px; font-size: 15px;">Following IknowFinland we're building citizenship test simulators for other European countries. Their release is also planned for 2026. Entertainment and leisure apps are in the pipeline — announcements to follow.</p>
+      <div class="upcoming-grid">
+        <div class="app-card">
+          <div class="app-icon"><img src="iknowgermany_icon.png" alt="IknowGermany" /></div>
+          <div>
+            <div class="app-name">IknowGermany</div>
+            <p class="app-desc">Einbürgerungstest practice — German citizenship exam simulator.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><img src="iknowfrance_icon.png" alt="IknowFrance" /></div>
+          <div>
+            <div class="app-name">IknowFrance</div>
+            <p class="app-desc">French naturalisation interview and civic knowledge preparation.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><img src="iknowsweden_icon.png" alt="IknowSweden" /></div>
+          <div>
+            <div class="app-name">IknowSweden</div>
+            <p class="app-desc">Swedish citizenship knowledge practice. Samhällskunskap questions.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><img src="iknownetherlands_icon.png" alt="IknowNetherlands" /></div>
+          <div>
+            <div class="app-name">IknowNetherlands</div>
+            <p class="app-desc">Inburgeringsexamen preparation for the Netherlands.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><img src="iknownorway_icon.png" alt="IknowNorway" /></div>
+          <div>
+            <div class="app-name">IknowNorway</div>
+            <p class="app-desc">Norwegian citizenship test preparation. Statsborgerprøven practice questions.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><img src="iknowdenmark_icon.png" alt="IknowDenmark" /></div>
+          <div>
+            <div class="app-name">IknowDenmark</div>
+            <p class="app-desc">Danish citizenship test simulator. Indfødsretsprøven practice questions.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -520,60 +881,15 @@
   <section id="about">
     <div class="inner fade-in">
       <p class="section-label">About</p>
-      <h2 class="section-title">Who we are</h2>
-      <div class="about-text">
-        <p>Voluka is a sole proprietorship registered in Finland.</p>
-        <p>The company develops mobile applications and digital products with a focus on education, knowledge, productivity and personal development.</p>
-        <p>Founded in 2026, Voluka aims to deliver reliable and user-friendly applications for a global audience.</p>
-        <p>Where do we find our inspiration? Why these specific products? The answer is simple. We created what we personally needed. Our own experience, our needs, and our vision deliver real results.</p>
+      <h2 class="section-title">Built by someone<br />who needed it</h2>
+      <div class="about-first-row">
+        <img src="voluka_logo.png" alt="Voluka" class="about-logo" />
+        <p class="about-first-p">Voluka is a sole proprietorship registered in Helsinki, Finland. We build mobile applications focused on education, knowledge, and personal development.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- APPS -->
-  <section id="apps">
-    <div class="inner fade-in">
-      <p class="section-label">Apps</p>
-      <h2 class="section-title">Our applications</h2>
-      <p style="color: var(--ink-2); max-width: 560px;">
-        We build a line of applications that help people integrate into a new country —
-        test their knowledge of history, laws and traditions, and approach citizenship exams with confidence.
-      </p>
-
-      <div class="apps-grid">
-        <div class="app-card">
-          <div class="app-icon">
-            <img src="iknowfinland_icon.png" alt="IknowFinland app icon" />
-          </div>
-          <div class="app-name">IknowFinland</div>
-          <p class="app-desc">
-            A citizenship test simulator for Finland. Practice questions on Finnish history, governance, equality and labor law — in Finnish and Swedish.
-          </p>
-          <span class="app-badge soon">Coming July 2026</span>
-        </div>
-      </div>
-
-      <div class="apps-coming">
-        <strong>Up next</strong>
-        Following the launch of IknowFinland, we are preparing applications for other countries with similar functionality.
-        <div class="coming-list">
-          <span class="coming-tag">
-            <img src="iknowgermany_icon.png" alt="Germany" />
-            IknowGermany
-          </span>
-          <span class="coming-tag">
-            <img src="iknowfrance_icon.png" alt="France" />
-            IknowFrance
-          </span>
-          <span class="coming-tag">
-            <img src="iknowsweden_icon.png" alt="Sweden" />
-            IknowSweden
-          </span>
-          <span class="coming-tag">
-            <img src="iknownetherlands_icon.png" alt="Netherlands" />
-            IknowNetherlands
-          </span>
-        </div>
+      <div class="about-body">
+        <p>The idea to create application IknowFinland was born from a simple personal need: a reliable, multilingual tool for people preparing for the Finnish citizenship test. We built what we needed — and made it available to everyone.</p>
+        <p>Following the successful launch of our integration knowledge apps — IknowFinland, IknowGermany, IknowFrance and beyond — our next ambition is to expand into entertainment and leisure. We believe the same care and craft that makes a great study tool can make a great experience app.</p>
+        <p class="about-meta">Business ID: 3633876-7 · Founded 2026 · Helsinki, Finland</p>
       </div>
     </div>
   </section>
@@ -586,7 +902,7 @@
       <div class="contact-grid">
         <div class="contact-item">
           <p class="contact-label">Company</p>
-          <p class="contact-value">Voluka</p>
+          <p class="contact-value">Voluka (toiminimi)</p>
         </div>
         <div class="contact-item">
           <p class="contact-label">Business ID</p>
@@ -604,14 +920,14 @@
     </div>
   </section>
 
-  <!-- PRIVACY POLICY -->
+  <!-- PRIVACY -->
   <section id="privacy">
     <div class="inner fade-in">
       <p class="section-label">Legal</p>
-      <h2 class="section-title">Privacy Policy – IknowFinland</h2>
+      <h2 class="section-title">Privacy Policy<br />IknowFinland</h2>
       <div class="privacy-body">
         <p><em>Last updated: June 17, 2026</em></p>
-        <p>IknowFinland ("the App") is developed by Voluka, a private individual. This Privacy Policy explains how information is collected and used when you use the App.</p>
+        <p>IknowFinland ("the App") is developed by Voluka. This Privacy Policy explains how information is collected and used when you use the App.</p>
 
         <h3>Information We Collect</h3>
         <p>The App itself does not collect, store, or transmit any personal data. Your quiz settings and preferences are stored locally on your device only.</p>
@@ -625,7 +941,7 @@
         <p>This data is collected and processed by Google in accordance with <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
         <h3>Third-Party Services</h3>
-        <p>The App uses Google AdMob for advertising. Google may use the collected data to serve personalised or non-personalised ads depending on your consent choices.</p>
+        <p>The App uses Google AdMob for advertising. Google may use collected data to serve personalised or non-personalised ads depending on your consent choices.</p>
 
         <h3>Your Rights (GDPR)</h3>
         <p>If you are located in the European Economic Area, you have the right to access, correct, or delete your personal data, and to withdraw consent at any time. Since the App does not directly collect personal data, requests regarding advertising data should be directed to Google.</p>
@@ -638,19 +954,30 @@
         <h3>Children's Privacy</h3>
         <p>The App is intended for users aged 18 and older. We do not knowingly collect data from children under 18.</p>
 
+        <h3>Content & Sources</h3>
+        <p>The quiz questions and explanations included in our applications are based solely on publicly available materials, including:</p>
+        <ul>
+          <li>Official integration course study guides and workbooks published by government and public institutions</li>
+          <li>Publicly available civic knowledge handbooks and citizenship exam preparation materials</li>
+          <li>Open educational resources and reference publications in the public domain</li>
+        </ul>
+        <p>Voluka does not claim ownership of any factual civic or historical content. All questions reflect publicly available knowledge intended to help users prepare for official citizenship examinations. If you believe any content requires clarification or correction, please contact us.</p>
+
         <h3>Contact</h3>
-        <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@voluka.net">info@voluka.net</a>.</p>
+        <p>Questions about this Privacy Policy or content sources? Contact us at <a href="mailto:info@voluka.net">info@voluka.net</a>.</p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <span>© 2026 Voluka · Business ID 3633876-7 · Helsinki, Finland</span>
+    <p>© 2026 Voluka (toiminimi) · Business ID 3633876-7 · Helsinki, Finland · <a href="mailto:info@voluka.net">info@voluka.net</a></p>
+    <p style="margin-top: 10px; font-size: 11px; color: #374151; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+      Quiz content is based on publicly available integration course materials, official study guides and textbooks. All referenced materials are in the public domain.
+    </p>
   </footer>
 
   <script>
-    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -658,8 +985,7 @@
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
-
+    }, { threshold: 0.08 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
