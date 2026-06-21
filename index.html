@@ -55,6 +55,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .nav-logo {
@@ -113,7 +114,7 @@
     /* ── HERO ── */
     #hero {
       background: linear-gradient(145deg, #b8d0ff 0%, #e8f1ff 60%, #ffffff 100%);
-      padding: 88px 24px 108px;
+      padding: 52px 24px 108px;
     }
 
     .hero-inner {
@@ -150,7 +151,18 @@
     .hero-badge-info {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 0px;
+    }
+
+    .hero-badge-coming {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+      margin-top: 3px;
     }
 
     .hero-badge-name {
@@ -170,10 +182,12 @@
     .hero-badge-dot {
       width: 10px;
       height: 10px;
+      min-width: 10px;
       border-radius: 50%;
       background: #22c55e;
       box-shadow: 0 0 0 4px rgba(34,197,94,0.22);
       margin-left: 4px;
+      flex-shrink: 0;
     }
 
     .hero-title {
@@ -637,11 +651,10 @@
           <div class="hero-badge-info">
             <span class="hero-badge-name">IknowFinland</span>
             <span class="hero-badge-sub">Mobile app · App Store &amp; Google Play</span>
+            <span class="hero-badge-coming"><span class="hero-badge-dot"></span>Coming July 2026</span>
           </div>
-          <span class="hero-badge-dot"></span>
-          Coming July 2026
         </div>
-        <h1 class="hero-title">Pass your Finnish<br /><em>citizenship test</em><br />first try.</h1>
+        <h1 class="hero-title">Pass your Finnish<br /><em>citizenship test</em><br />first try</h1>
         <p class="hero-sub">
           A quiz simulator for the Finnish citizenship exam —
           120+ questions across 4 topics, in your language.
