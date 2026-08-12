@@ -70,7 +70,8 @@
       gap: 8px;
     }
 
-    .nav-logo img { width: 30px; height: 30px; object-fit: contain; }
+    /* Logo art is tightly cropped and slightly wider than tall — size by height, let width follow */
+    .nav-logo img { height: 28px; width: auto; }
 
     .nav-links { display: flex; gap: 28px; list-style: none; }
 
@@ -500,7 +501,7 @@
     .about-first-row {
       display: grid;
       grid-template-columns: 130px 1fr;
-      gap: 6px;
+      gap: 28px;
       align-items: center;
       margin-bottom: 16px;
       max-width: 680px;
@@ -532,9 +533,8 @@
 
     .about-logo {
       width: 130px;
-      height: 130px;
-      object-fit: contain;
-      opacity: 0.8;
+      max-width: 150px;
+      height: auto;
     }
 
     /* ── CONTACT ── */
@@ -623,8 +623,6 @@
       .lang-grid { grid-template-columns: repeat(2, 1fr); }
       .upcoming-grid { grid-template-columns: 1fr; }
       .about-layout { grid-template-columns: 1fr; }
-      .about-first-row { grid-template-columns: 1fr; }
-      .about-logo { width: 200px; height: 200px; }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
       .nav-links { gap: 16px; }
     }
@@ -633,6 +631,18 @@
       section { padding: 64px 20px; }
       .contact-grid { grid-template-columns: 1fr; }
       .hero-title { letter-spacing: -2px; }
+    }
+
+    /* Narrow phones: keep the logo beside the text by shrinking it, not by stacking */
+    @media (max-width: 400px) {
+      .about-first-row { grid-template-columns: 96px 1fr; gap: 14px; }
+      .about-logo { width: 96px; }
+    }
+
+    /* Below 300px there is no room for two columns — stack the logo above the text */
+    @media (max-width: 300px) {
+      .about-first-row { grid-template-columns: 1fr; gap: 14px; }
+      .about-logo { width: 150px; }
     }
 
     /* ── MOTION ── */
